@@ -24,15 +24,15 @@ driver.get("http://registration.bisefsd.edu.pk/Account/Login.aspx")
 
 """controls on website"""
 username = driver.find_element("id", "ContentPlaceHolder1_LoginUser_UserName")
-username.send_keys("101268")
+username.send_keys(" ") # enter the board username given to your institute inside the double quotations
 password = driver.find_element("id", "ContentPlaceHolder1_LoginUser_Password")
-password.send_keys("azam.shams")
+password.send_keys(" ") #enter the password of your school account provided by Board .
 driver.find_element("name", "ctl00$ContentPlaceHolder1$LoginUser$ctl01").click()
 driver.get("http://registration.bisefsd.edu.pk/InstituteForms/RegistrationList.aspx")
 driver.get("http://registration.bisefsd.edu.pk/InstituteForms/RegistrationNew.aspx")
 
 # #import data from excel file
-path = "F:\\SSC_images\\9th_Registration.xlsx"   # enter the path of Excel file
+path = "F:\\SSC_images\\9th_Registration.xlsx"   # enter the path of Excel file in side the quotations as mentioned one.
 wb_obj = openpyxl.load_workbook(path)
 sheet_obj = wb_obj.active
 max_col = sheet_obj.max_column
